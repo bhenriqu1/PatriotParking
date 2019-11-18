@@ -6,7 +6,7 @@ public class LotI extends ReservedLotPermit{
 
 	
 
-	public LotI(String passName, String destination, int carpoolNumber) {
+	public LotI(String passName, String destination) {
 
 		super(passName, destination);
       
