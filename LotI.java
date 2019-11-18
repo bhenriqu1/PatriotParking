@@ -3,8 +3,6 @@ public class LotI extends ReservedLotPermit{
 	
 
 	int lotIPrice = 625;
-	int numPeople = 1;
-
 	
 
 	public LotI(String passName, String destination) {
