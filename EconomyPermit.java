@@ -1,7 +1,7 @@
 
 public class EconomyPermit extends CarDriver{
 	
-	int westCampusPrice = 175;
+	int westCampusPrice = 175; //38.8327968, -77.3264524
 	
 	public EconomyPermit(String passName, String destination) {
 		super(passName, destination);
@@ -18,9 +18,10 @@ public class EconomyPermit extends CarDriver{
 	}
 	
 	
-	//algorithm to determine distance from lot to destination
+	/*algorithm to determine distance from lot to destination
 	public float distance() {
 		return (Float) null;
-	}
+	}*/
+
 
 }

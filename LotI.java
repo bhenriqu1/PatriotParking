@@ -4,7 +4,7 @@ public class LotI extends ReservedLotPermit{
 
 	int lotIPrice = 625;
 
-	
+	//Lot I : 38.83333, -77.3119133
 
 	public LotI(String passName, String destination) {
 
@@ -31,7 +31,7 @@ public class LotI extends ReservedLotPermit{
 
 	}
 
-	
+
 
 	//determine if will divide by only fall and spring semester?
 

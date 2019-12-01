@@ -7,10 +7,13 @@ public class CarDriver {
 	//98 destinations based off of GMU Map
 	//int destinationArray [];
 	ArrayList<Coordinate> destinationArray; //ArrayList with the 98 destinations on Fairfax GMU Campus
+   ArrayList<Coordinate> lotArray; //ArrayList with lots on Fairfax GMU campus
 	int annualPassCost; //cost of parking pass
 	String passName; //parking pass name
 	String destination;
 	int carpoolNumber; //number of people in car
+   
+   //98 destinations
     Coordinate aquaticAndFitnessCenter = new Coordinate(38.8263722, -77.3042089);
     Coordinate aquiaBuilding = new Coordinate(38.8320733, -77.3094103);
     Coordinate artAndDesignBuilding = new Coordinate(38.8279848, -77.306326);
@@ -109,9 +112,18 @@ public class CarDriver {
 	Coordinate whitetop = new Coordinate(38.8339996, -77.3116664);
 	Coordinate masonvale = new Coordinate(38.8329807, -77.2992929);
 
-
-
-
+   //lots
+   Coordinate westCampus = new Coordinate(38.8327968, -77.3264524);
+   Coordinate lotA = new Coordinate(38.82623, -77.307073);
+   Coordinate lotC = new Coordinate(38.8252031, -77.3059246);
+   Coordinate lotK = new Coordinate(38.827806, -77.312655);
+   Coordinate lotL = new Coordinate(38.8256766, -77.3106616);
+   Coordinate lotM = new Coordinate(38.833843, -77.3136804);
+   Coordinate lotO = new Coordinate(38.8344029, -77.3135063);
+   Coordinate lotP = new Coordinate(38.8349269, -77.3163289);
+   Coordinate lotPV = new Coordinate(38.8308986, -77.3142792);
+   Coordinate lotI = new Coordinate(38.83333, -77.3119133);
+   Coordinate lotJ = new Coordinate(38.8298081, -77.3147599);
 
 
 	/**
@@ -126,6 +138,7 @@ public class CarDriver {
 				skylineFitnessCenter, southside, tidewater, commonwealth, dominion, amherst, brunswick, carroll, dickenson, essex, franklin, grayson, hanover,
 				libertySquare, potomacHeights, adams, eisenhower, harrison, jackson, jefferson, kennedy, lincoln, madison, monroe, roosevelt, taylor, truman,
 				washington, wilson, rogers, whitetop, masonvale));
+		lotArray = new ArrayList<>(Arrays.asList(westCampus, lotA, lotC, lotK, lotL, lotM, lotO, lotP, lotPV, lotI, lotJ, shenandoahParkingDeck, masonPondParkingDeck, rappahannockRiverParkingDeck));
 		this.passName = passName;
 		this.destination = destination;
 	}
@@ -135,13 +148,50 @@ public class CarDriver {
 	 * Constructor with additional carpool params
 	 */
 	public CarDriver(String passName,String destination, int carpoolNumber) {
-		destinationArray = new ArrayList();
+		destinationArray = new ArrayList<>(Arrays.asList(aquaticAndFitnessCenter, aquiaBuilding, artAndDesignBuilding, buchananHall, carowHall, cartyHouse, centerForTheArts, centralHeatindAndCoolingPlant, childDevelopmentCenter, clock, collegeHall, crossCottage, davidKingHall, deLaskiPerformingArtsBuilding, eagleBankArena, eastBuilding, enterpriseHall,
+				exploratoryHall, facilitiesAdministration, facilitiesManagementArchives, facilitiesManagementOperations, fenwickLibrary, fieldHouseAndModule, finleyBuilding, georgeMasonStatue, greenhouse, harrisTheatre, innovationHall, johnsonCenter, kelleyII, krasnowInstitute, krugHall, lectureHall, mertenHall,
+				robinsonHallB, studentUnionBuildingI, theaterSpace, theHub, thompsonHall, warehouse, westBuilding, westPEModule, blueRidge, easternShore, hamptonRoads, northernNeck, piedmont, sandbridge,
+				skylineFitnessCenter, southside, tidewater, commonwealth, dominion, amherst, brunswick, carroll, dickenson, essex, franklin, grayson, hanover,
+				libertySquare, potomacHeights, adams, eisenhower, harrison, jackson, jefferson, kennedy, lincoln, madison, monroe, roosevelt, taylor, truman,
+				washington, wilson, rogers, whitetop, masonvale));
+      lotArray = new ArrayList<>(Arrays.asList(westCampus, lotA, lotC, lotK, lotL, lotM, lotO, lotP, lotPV, lotI, lotJ, shenandoahParkingDeck, masonPondParkingDeck, rappahannockRiverParkingDeck));
 		this.passName = passName;
 		this.destination = destination;
 		this.carpoolNumber = carpoolNumber;
 	}
 	
 	
-	
+   //Average walking speed is 3.1mph
+   //1 hour = 60 minutes
+   
+   /**
+    * @param the coordinate of the destination
+    * @return time spent walking between two coordinates in minutes
+    */
+   public double timeCalculator(Coordinate lot, Coordinate destination) throws WrongPassNameException{
+      return (getDistance(lot, destination) * 3.1 * 60);
+   }
+   
+      /**
+    * I made this method static so this method can be referenced from other classes
+    * Calculates the distance between two coordinates by using the Haversine formula
+    * @param the coordinate of the destination
+    * @return the distance between two coordinates is miles
+    */
+	public double getDistance(Coordinate lot, Coordinate destination) { 
+   
+
+    double latDistance = Math.toRadians(destination.getX() - lot.getX());
+    double lngDistance = Math.toRadians(destination.getY() + lot.getY());
+
+    double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
+             + Math.cos(Math.toRadians(destination.getX())) * Math.cos(Math.toRadians(lot.getX()))
+             * Math.sin(lngDistance / 2) * Math.sin(lngDistance / 2);
+
+    double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    return (3958.8 * c); //multiply by the average distance of earth in miles
+   }
+
 	
 }
