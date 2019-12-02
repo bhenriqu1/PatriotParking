@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class CarDriver {
@@ -169,7 +170,10 @@ public class CarDriver {
     * @return time spent walking between two coordinates in minutes
     */
    public double timeCalculator(Coordinate lot, Coordinate destination) throws WrongPassNameException{
-      return (getDistance(lot, destination) * 3.1 * 60);
+	   Double time = ((getDistance(lot, destination) * 60) / 3.1);
+	   DecimalFormat df = new DecimalFormat("0.00");      
+	   time = Double.valueOf(df.format(time));
+      return time;
    }
    
       /**
@@ -182,7 +186,7 @@ public class CarDriver {
    
 
     double latDistance = Math.toRadians(destination.getX() - lot.getX());
-    double lngDistance = Math.toRadians(destination.getY() + lot.getY());
+    double lngDistance = Math.toRadians(destination.getY() - lot.getY());
 
     double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
              + Math.cos(Math.toRadians(destination.getX())) * Math.cos(Math.toRadians(lot.getX()))

@@ -1,20 +1,27 @@
+import java.text.DecimalFormat;
 
 public class EconomyPermit extends CarDriver{
 	
-	int westCampusPrice = 175; //38.8327968, -77.3264524
+	double westCampusPrice = 175.0; //38.8327968, -77.3264524
 	
 	public EconomyPermit(String passName, String destination) {
 		super(passName, destination);
 	}
 	
-	public int westCampuYearPrice() {
+	
+	public double westCampuYearPrice() {
 		return westCampusPrice;
 	}
 	
-	//determine if will divide by only fall and spring semester?
-	//currently rough estimate, 7 months for 2 semesters with 30 days
-	public int westCampusDayPrice() {
-		return westCampusPrice / 210; 
+	
+	//currently rough estimate, 7 months for 2 semesters 
+	public double westCampusDayPrice() {
+		double price = westCampusPrice / 210.0;
+		DecimalFormat df = new DecimalFormat("0.00");      
+		price = Double.valueOf(df.format(price));
+		
+		
+		return price; 
 	}
 	
 	
