@@ -1,4 +1,4 @@
-public class ReservedLotPermit extends CarDriver{
+public class ReservedLotPermit extends CarDriver2{
 
 
 	

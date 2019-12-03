@@ -1,6 +1,6 @@
 import java.text.DecimalFormat;
 
-public class EconomyPermit extends CarDriver{
+public class EconomyPermit extends CarDriver2{
 	
 	double westCampusPrice = 175.0; //38.8327968, -77.3264524
 	

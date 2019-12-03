@@ -1,6 +1,6 @@
 import java.text.DecimalFormat;
 
-public class GeneralLotPermit extends CarDriver{
+public class GeneralLotPermit extends CarDriver2{
 
 	
 

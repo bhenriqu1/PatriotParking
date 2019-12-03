@@ -1,4 +1,4 @@
-public class ReservedParkingDeckPermit extends CarDriver{
+public class ReservedParkingDeckPermit extends CarDriver2{
 
 	public ReservedParkingDeckPermit(String passName, String destination) {
 
@@ -9,11 +9,7 @@ public class ReservedParkingDeckPermit extends CarDriver{
    //it will be in the subClass
 	//algorithm to determine distance from lot to destination
 
-	public float distance() {
-
-		return (Float) null;
-
-	}
+	
 
 
 
