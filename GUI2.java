@@ -64,9 +64,7 @@ public class GUI2 extends JFrame implements ActionListener {
    
    final JComboBox<String> cb2 = new JComboBox<String>(choices2);
  
-   //String[] choices3 = { "1","2","3","4" };
-   //final JComboBox<String> cb3 = new JComboBox<String>(choices3); 
-   private JSpinner yearsSpinner; 
+   
    
    
 
@@ -77,36 +75,19 @@ public class GUI2 extends JFrame implements ActionListener {
       GridBagConstraints layoutConst = null;
 
       // Set frame's title
-      setTitle("Patriot Parking");
+      setTitle("MASON++;");
 
       // Create labels
      
       parkingLabel = new JLabel("Parking location:");
       lbl = new JLabel("Select one of the locations on the GMU Fairfax Campus and click Calculate");
       destinationLabel = new JLabel("Destination:");
-      carpoolLabel = new JLabel("If you carpool, with how many people?");
+      
       
       
       cb.setForeground(Color.GREEN.darker());
       cb2.setForeground(Color.YELLOW.darker());
      
-      
-      //spinner
-      int initNum;     // Spinner initial value display
-      int minNum;      // Spinner min value
-      int maxNum;      // Spinner max value
-      int stepVal;      // Spinner step
-
-      initNum = 0;
-      minNum = 0;
-      maxNum = 4;
-      stepVal = 1;
-      
-      SpinnerNumberModel spinnerModel = null;
-      spinnerModel = new SpinnerNumberModel(initNum, minNum, maxNum, stepVal);
-      yearsSpinner = new JSpinner(spinnerModel);
-      //yearsSpinner.addActionListener(this);
-      
       
       
       //output text box
@@ -142,58 +123,31 @@ public class GUI2 extends JFrame implements ActionListener {
       setLayout(new GridBagLayout());
 
       layoutConst = new GridBagConstraints();
-      //layoutConst.insets = new Insets(10, 10, 10, 1);
       layoutConst.gridx = 1;
       layoutConst.gridy = 0;
       add(lbl, layoutConst);
       
       
       layoutConst = new  GridBagConstraints();
-      //layoutConst.insets = new Insets(10, 0, 1, 10);
       layoutConst.gridx = 0;
       layoutConst.gridy = 1;
       add(parkingLabel, layoutConst);
       
       layoutConst = new GridBagConstraints();
-      //layoutConst.insets = new Insets(10, 10, 10, 1);
-      layoutConst.gridx = 1;
       layoutConst.gridy = 1;
       add(cb, layoutConst);
       
       layoutConst = new  GridBagConstraints();
-      //layoutConst.insets = new Insets(10, 0, 1, 10);
       layoutConst.gridx = 0;
       layoutConst.gridy = 2;
       add(destinationLabel, layoutConst);
       
       layoutConst = new GridBagConstraints();
-      //layoutConst.insets = new Insets(10, 10, 10, 1);
       layoutConst.gridx = 1;
       layoutConst.gridy = 2;
       add(cb2, layoutConst);
       
-      layoutConst = new  GridBagConstraints();
-      //layoutConst.insets = new Insets(10, 0, 1, 10);
-      layoutConst.gridx = 0;
-      layoutConst.gridy = 3;
-      add(carpoolLabel, layoutConst);
-      
-     /** 
-      layoutConst = new GridBagConstraints();
-      //layoutConst.insets = new Insets(10, 10, 10, 1);
-      layoutConst.gridx = 1;
-      layoutConst.gridy = 3;
-      add(cb3, layoutConst);
-      
-      **/
-      
-      layoutConst = new GridBagConstraints();
-      //layoutConst.insets = new Insets(10, 1, 10, 10);
-      //layoutConst.fill = GridBagConstraints.HORIZONTAL;
-      layoutConst.gridx = 1;
-      layoutConst.gridy = 3;
-      add(yearsSpinner, layoutConst);
-      
+     
     
 
       layoutConst = new GridBagConstraints();
@@ -207,16 +161,8 @@ public class GUI2 extends JFrame implements ActionListener {
       
       
       // Specify component's grid location
-      
-/**
+
       layoutConst = new GridBagConstraints();
-      layoutConst.insets = new Insets(10, 1, 10, 10);
-      layoutConst.gridx = 1;
-      layoutConst.gridy = 2;
-      add(distField, layoutConst);
-**/
-      layoutConst = new GridBagConstraints();
-      //layoutConst.insets = new Insets(10, 5, 10, 10);
       layoutConst.gridx = 1;
       layoutConst.gridy = 4;
       add(calcButton, layoutConst);
@@ -235,102 +181,12 @@ public class GUI2 extends JFrame implements ActionListener {
 	   
 	   //list of lots
        String lot0 = "West Campus";
-       String lot1 = "Lot A";
-       String lot2 = "Lot C";
-       String lot3 = "Lot K";
-       String lot4 = "Lot L";
-       String lot5 = "Lot M";
-       String lot6 = "Lot O";
-       String lot7 = "Lot P";
-       String lot8 = "Lot PV";
-       String lot9 = "Lot I";
-       String lot10 = "Lot J";
-       String lot11 = "Shenandoah Parking Deck";
-       String lot12 = "Mason Pond Parking Deck";
-       String lot13 = "Rappahannock River Parking Deck";
+       
    
 		
        //GMU Locations
        String des0 = "Aquatic And Fitness Center";
-       String des1 = "Aquia Building";
-       String des2 = "Art And Design Building";
-       String des3 = "Buchanan Hall";
-       String des4 = "Carow Hall";
-       String des5 = "Carty House";
-       String des6 = "Center For The Arts";
-       String des7 = "Central Heating And Cooling Plant";
-       String des8 = "Child Development Center";
-       String des9 =  "Clock";
-       String des10 = "College Hall";
-       String des11 = "Cross Cottage";
-       String des12 = "David King Hall";
-       String des13 = "DeLaski Performing Arts Building";
-       String des14 = "EagleBank Arena";
-       String des15 = "East Building";
-       String des16 = "Enterprise Hall";
-       String des17 = "Exploratory Hall";
-       String des18 = "Facilities Administration";
-       String des19 = "Facilities Management Archives";
-       String des20 = "Facilities Management Operations";
-       String des21 = "Fenwick Library";
-       String des22 = "Field House And Module";
-       String des23 = "Finley Building";
-       String des24 = "George Mason Statue";
-       String des25 = "Greenhouse";
-       String des26 = "Harris Theatre";
-       String des27 = "Innovation Hall";
-       String des28 = "Johnson Center";
-       String des29 = "Kelley II";
-       String des30 = "Krasnow Institute";
-       String des31 = "Krug Hall";
-       String des32 = "Lecture Hall";
-       String des33 = "Merten Hall";
-       String des34 = "Robinson Hall B";
-       String des35 = "Student Union Building I";
-       String des36 = "Theater Space";
-       String des37 = "The Hub";
-       String des38 = "Thompson Hall";
-       String des39 = "Warehouse";
-       String des40 = "West Building";
-       String des41 = "West PE Module"; 
-       String des42 = "Blue Ridge";
-       String des43 = "Eastern Shore";
-       String des44 = "Hampton Roads";
-       String des45 = "Northern Neck";
-       String des46 = "Piedmont";
-       String des47 = "Sandbridge";
-       String des48 = "Skyline Fitness Center";
-       String des49 = "Southside";
-       String des50 =  "Tidewater";
-       String des51 = "Commonwealth";	   
-       String des52 = "Dominion";
-       String des53 = "Amherst";
-       String des54 = "Brunswick";
-       String des55 = "Carroll";
-       String des56 = "Dickenson";
-       String des57 = "Essex";
-       String des58 = "Franklin";
-       String des59 = "Grayson";
-       String des60 = "Hanover";
-       String des61 = "Liberty Square";
-       String des62 = "Potomac Heights";
-       String des63 = "Adams";
-       String des64 = "Eisenhower";
-       String des65 = "Harrison";
-       String des66 = "Jackson";
-       String des67 = "Jefferson";
-       String des68 = "Kennedy";
-       String des69 = "Lincoln";
-       String des70 = "Madison";
-       String des71 = "Monroe";
-       String des72 = "Roosevelt";
-       String des73 = "Taylor";
-       String des74 = "Truman";
-       String des75 = "Washington";
-       String des76 = "Wilson";
-       String des77 = "Rogers";
-       String des78 = "Whitetop";
-       String des79 = "Masonvale";
+      
        
 	   EconomyPermit e1 = new EconomyPermit(lot0, des0);
 	   double price = e1.westCampusDayPrice();
@@ -412,10 +268,5 @@ public class GUI2 extends JFrame implements ActionListener {
 	      
 	      
 	   }
-   
-   
-   //add image to GUI
-   //take out exceptions
-   //TAKE OUT carpool discounts
    
 }
