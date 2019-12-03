@@ -11,7 +11,7 @@ public class CarDriver2 {
 	ArrayList<Coordinate> lotArray; //ArrayList with lots on Fairfax GMU campus
 	int annualPassCost; //cost of parking pass
 	
-	
+	String passName;
 	String name; //parking pass name                   ------------------------------
 	Coordinate coord;					//			   -------------------------------
 	
@@ -137,7 +137,7 @@ public class CarDriver2 {
 	 * destination on Fairfax GMU Campus
 	 * @param annualPassCost,  
 	 */
-   /*
+  
 	public CarDriver2(String passName,String destination) {
 		destinationArray = new ArrayList<>(Arrays.asList(aquaticAndFitnessCenter, aquiaBuilding, artAndDesignBuilding, buchananHall, carowHall, cartyHouse, centerForTheArts, centralHeatindAndCoolingPlant, childDevelopmentCenter, clock, collegeHall, crossCottage, davidKingHall, deLaskiPerformingArtsBuilding, eagleBankArena, eastBuilding, enterpriseHall,
 				exploratoryHall, facilitiesAdministration, facilitiesManagementArchives, facilitiesManagementOperations, fenwickLibrary, fieldHouseAndModule, finleyBuilding, georgeMasonStatue, greenhouse, harrisTheatre, innovationHall, johnsonCenter, kelleyII, krasnowInstitute, krugHall, lectureHall, mertenHall,
@@ -149,12 +149,12 @@ public class CarDriver2 {
 		this.passName = passName;
 		this.destination = destination;
 	}
-**/
+
 	
 	/**
 	 * Constructor with additional carpool params
 	 */
-   /*
+   
 	public CarDriver2(String passName,String destination, int carpoolNumber) {
 		destinationArray = new ArrayList<>(Arrays.asList(aquaticAndFitnessCenter, aquiaBuilding, artAndDesignBuilding, buchananHall, carowHall, cartyHouse, centerForTheArts, centralHeatindAndCoolingPlant, childDevelopmentCenter, clock, collegeHall, crossCottage, davidKingHall, deLaskiPerformingArtsBuilding, eagleBankArena, eastBuilding, enterpriseHall,
 				exploratoryHall, facilitiesAdministration, facilitiesManagementArchives, facilitiesManagementOperations, fenwickLibrary, fieldHouseAndModule, finleyBuilding, georgeMasonStatue, greenhouse, harrisTheatre, innovationHall, johnsonCenter, kelleyII, krasnowInstitute, krugHall, lectureHall, mertenHall,
@@ -167,7 +167,7 @@ public class CarDriver2 {
 		this.destination = destination;
 		this.carpoolNumber = carpoolNumber;
 	}
-	**/
+	
    
 	public CarDriver2(String name) {
 		this.name = name;
