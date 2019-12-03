@@ -463,40 +463,40 @@ public class CarDriver2 {
 		else if(this.name.equals("Jefferson")) {
 			this.coord = new Coordinate(38.8300383, -77.3025295); //jefferson
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Kennedy")) {
 			this.coord = new Coordinate(38.8292858, -77.3012238); //kennedy
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Lincoln")) {
 			this.coord = new Coordinate(38.8282583, -77.3013219); //lincoln
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Madison")) {
 			this.coord = new Coordinate(38.8301346, -77.3020971); //madison
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Monroe")) {
 			this.coord = new Coordinate(38.8297756, -77.3027059);//monroe
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Roosevelt")) {
 			this.coord = new Coordinate(38.828474, -77.301775); //roosevelt
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Taylor")) {
 			this.coord = new Coordinate(38.8276787, -77.3016427); //taylor
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Truman")) {
 			this.coord = new Coordinate(38.829542, -77.301504); //trumnan
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Washington")) {
 			this.coord = new Coordinate(38.829998, -77.301694); //washington
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Wilson")) {
 			this.coord = new Coordinate(38.829268, -77.302261); //wison
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Rogers")) {
 			this.coord = new Coordinate(38.8346547, -77.3110004); //rogers
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Whitetop")) {
 			this.coord = new Coordinate(38.8339996, -77.3116664); //whitetop
 		}
-		else if(this.name.equals("Jefferson")) {
+		else if(this.name.equals("Masonvale")) {
 			this.coord = new Coordinate(38.8329807, -77.2992929); //masonvale
 		}
 		
