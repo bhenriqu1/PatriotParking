@@ -147,8 +147,6 @@ public class GUI2 extends JFrame implements ActionListener {
       layoutConst.gridy = 2;
       add(cb2, layoutConst);
       
-     
-    
 
       layoutConst = new GridBagConstraints();
       layoutConst.insets = new Insets(1, 10, 10, 10);
@@ -158,9 +156,7 @@ public class GUI2 extends JFrame implements ActionListener {
       layoutConst.gridwidth = 3; // 3 cells wide
       add(scrollPane, layoutConst);
       
-      
-      
-      // Specify component's grid location
+    
 
       layoutConst = new GridBagConstraints();
       layoutConst.gridx = 1;
@@ -182,8 +178,6 @@ public class GUI2 extends JFrame implements ActionListener {
 	   //list of lots
        String lot0 = "West Campus";
        
-   
-		
        //GMU Locations
        String des0 = "Aquatic And Fitness Center";
       
