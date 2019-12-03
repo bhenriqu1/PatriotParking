@@ -14,11 +14,6 @@ public class ReservedLotPermit extends CarDriver{
 
 	//algorithm to determine distance from lot to destination
 
-	public float distance() {
-
-		return (Float) null;
-
-	}
 
 
 

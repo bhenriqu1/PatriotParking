@@ -1,8 +1,10 @@
+import java.text.DecimalFormat;
+
 public class Rappahannock extends ReservedParkingDeckPermit{
 
 	
 
-	int rappahannockPrice = 645;
+	double rappahannockPrice = 645.0;
 
 	
 
@@ -18,15 +20,8 @@ public class Rappahannock extends ReservedParkingDeckPermit{
     * @return the permit price that the vehicle owner will actually pay
     * @throws WrongCarpoolNumberException if the carpoolNumber is zero or a negative integer
     */
-	public int rappahannockYearPrice(int carpoolNumber) throws WrongCarpoolNumberException {
+	public double rappahannockYearPrice() {
       
-      if(carpoolNumber < 1) {
-         throw new WrongCarpoolNumberException();
-      } else if (carpoolNumber > 1 && carpoolNumber < 4){
-         this.rappahannockPrice *= (1 - (0.1 * carpoolNumber));
-      } else if (carpoolNumber >= 4){
-         this.rappahannockPrice *= 0.6;
-      }
 		return rappahannockPrice;
 
 	}
@@ -37,10 +32,12 @@ public class Rappahannock extends ReservedParkingDeckPermit{
 
 	//currently rough estimate, 7 months for 2 semesters with 30 days
 
-	public int rappahannockDayPrice() throws WrongCarpoolNumberException {
-
-		return rappahannockYearPrice(carpoolNumber) / 210; 
-
+	public double rappahannockDayPrice() { 
+		double price = rappahannockPrice / 210.0;
+		DecimalFormat df = new DecimalFormat("0.00");      
+		price = Double.valueOf(df.format(price));
+		
+		return price;
 	}
 
 	

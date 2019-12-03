@@ -1,8 +1,10 @@
+import java.text.DecimalFormat;
+
 public class GeneralLotPermit extends CarDriver{
 
 	
 
-	int generalLotPrice = 400;
+	double generalLotPrice = 400.0;
 
 	
 
@@ -14,7 +16,7 @@ public class GeneralLotPermit extends CarDriver{
 
 	
 
-	public int generalLotYearPrice() {
+	public double generalLotYearPrice() {
 
 		return generalLotPrice;
 
@@ -24,25 +26,18 @@ public class GeneralLotPermit extends CarDriver{
 
 	//determine if will divide by only fall and spring semester?
 
-	//currently rough estimate, 7 months for 2 semesters with 30 days
+	//currently rough estimate, 7 months for 2 semesters
 
-	public int generalLotDayPrice() {
+	public double generalLotDayPrice() {
 
-		return generalLotPrice / 210; 
-
+		double price = generalLotPrice / 210.0;
+		DecimalFormat df = new DecimalFormat("0.00");      
+		price = Double.valueOf(df.format(price));
+		
+		return price;
+		
 	}
 
-	
-
-	
-
-	//algorithm to determine distance from lot to destination
-
-	public float distance() {
-
-		return (Float) null;
-
-	}
 
 
 

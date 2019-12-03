@@ -1,8 +1,10 @@
+import java.text.DecimalFormat;
+
 public class LotI extends ReservedLotPermit{
 
 	
 
-	int lotIPrice = 625;
+	double lotIPrice = 625.0;
 
 	//Lot I : 38.83333, -77.3119133
 
@@ -18,15 +20,7 @@ public class LotI extends ReservedLotPermit{
     * @return the permit price that the vehicle owner will actually pay
     * @throws WrongCarpoolNumberException if the carpoolNumber is zero or a negative integer
     */
-	public int lotIYearPrice(int carpoolNumber) throws WrongCarpoolNumberException {
-      
-      if(carpoolNumber < 1) {
-         throw new WrongCarpoolNumberException();
-      } else if (carpoolNumber > 1 && carpoolNumber < 4){
-         this.lotIPrice *= (1 - (0.1 * carpoolNumber));
-      } else if (carpoolNumber >= 4){
-         this.lotIPrice *= 0.6;
-      }
+	public double lotIYearPrice(int carpoolNumber)  {
 		return lotIPrice;
 
 	}
@@ -37,8 +31,14 @@ public class LotI extends ReservedLotPermit{
 
 	//currently rough estimate, 7 months for 2 semesters with 30 days
 
-	public int lotIDayPrice() throws WrongCarpoolNumberException {
-		return lotIYearPrice(carpoolNumber) / 210; 
+	public double lotIDayPrice() {
+
+		double price = lotIPrice / 210.0;
+		DecimalFormat df = new DecimalFormat("0.00");      
+		price = Double.valueOf(df.format(price));
+		
+		
+		return price;
 	}
 
 	

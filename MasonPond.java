@@ -1,8 +1,10 @@
+import java.text.DecimalFormat;
+
 public class MasonPond extends ReservedParkingDeckPermit{
 
 	
 
-	int masonPondPrice = 700;
+	double masonPondPrice = 700.0;
 
 	
 
@@ -18,15 +20,8 @@ public class MasonPond extends ReservedParkingDeckPermit{
     * @return the permit price that the vehicle owner will actually pay
     * @throws WrongCarpoolNumberException if the carpoolNumber is zero or a negative integer
     */
-	public int masonPondYearPrice(int carpoolNumber) throws WrongCarpoolNumberException {
-
-      if(carpoolNumber < 1) {
-         throw new WrongCarpoolNumberException();
-      } else if (carpoolNumber > 1 && carpoolNumber < 4){
-         this.masonPondPrice *= (1 - (0.1 * carpoolNumber));
-      } else if (carpoolNumber >= 4){
-         this.masonPondPrice *= 0.6;
-      }
+	public double masonPondYearPrice(int carpoolNumber) {
+      
 		return masonPondPrice;
 
 	}
@@ -37,10 +32,15 @@ public class MasonPond extends ReservedParkingDeckPermit{
 
 	//currently rough estimate, 7 months for 2 semesters with 30 days
 
-	public int masonPondDayPrice() throws WrongCarpoolNumberException {
+	public double masonPondDayPrice() {
 
-		return masonPondYearPrice(carpoolNumber) / 210; 
-
+		double price = masonPondPrice / 210.0;
+		DecimalFormat df = new DecimalFormat("0.00");      
+		price = Double.valueOf(df.format(price));
+		
+		
+		return price;
+	
 	}
 
 	
