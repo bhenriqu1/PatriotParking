@@ -29,10 +29,9 @@ public class GUI2 extends JFrame implements ActionListener {
    private JButton calcButton;            // Triggers time calculation
    private JLabel destinationLabel;
    private JLabel parkingLabel;
-   private JLabel carpoolLabel;
-   private JTextField hrsFlyField;        // Displays fly time
-   private JTextField hrsDriveField;      // Displays drive time
+   private ImageIcon image;
    private JFormattedTextField distField; // Holds distance input
+   
    private JTextArea outputArea;
    JScrollPane scrollPane = null; 
    private JLabel lbl;						//top label
@@ -95,22 +94,13 @@ public class GUI2 extends JFrame implements ActionListener {
       scrollPane = new JScrollPane(outputArea);
       outputArea.setEditable(false);
       
-      
-      
-      
+  
       
       // Create button and add action listener
       calcButton = new JButton("Calculate");
       calcButton.addActionListener(this);
 
-      // Create flight time filed
-      hrsFlyField = new JTextField(15);
-      hrsFlyField.setEditable(false);
-
-      // Create driving time field
-      hrsDriveField = new JTextField(15);
-      hrsDriveField.setEditable(false);
-
+     
       // Create and set-up an input field for numbers (not text)
       distField = new JFormattedTextField(NumberFormat.getNumberInstance());
       distField.setEditable(true);
@@ -164,10 +154,32 @@ public class GUI2 extends JFrame implements ActionListener {
       add(calcButton, layoutConst);
      
       
+      image = new ImageIcon(getClass().getResource("mason.png"));
+      JLabel labelImage = new JLabel(image);
+      
+      layoutConst = new GridBagConstraints();
+      layoutConst.gridx = 1;
+      layoutConst.gridy = 9;
+      add(labelImage, layoutConst);
+      
+      image = new ImageIcon(getClass().getResource("gmu.png"));
+      JLabel labelImage2 = new JLabel(image);
+      
+      layoutConst = new GridBagConstraints();
+      layoutConst.gridx = 2;
+      layoutConst.gridy = 2;
+      add(labelImage2, layoutConst);
+      
+      
       
    }
 
-   /* Method is automatically called when an event 
+   private void add(ImageIcon image2, GridBagConstraints layoutConst) {
+	// TODO Auto-generated method stub
+	
+}
+
+/* Method is automatically called when an event 
       occurs (e.g, Enter key is pressed) */
    @Override
    public void actionPerformed(ActionEvent event) {
